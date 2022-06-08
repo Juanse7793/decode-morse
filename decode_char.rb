@@ -5,10 +5,9 @@ def decode_char(char)
            S: '...', T: '-', U: '..-', V: '...-', W: '.--', X: '-..-',
            Y: '-.--', Z: '--..' }
   @result = ''
-  code.each { |key, value|
-    if (value = char)
+  code.each do |key, value|
+    if (value === char)
       @result = key.to_s
     end
-  }
-  return @result
+    return @result
 end
