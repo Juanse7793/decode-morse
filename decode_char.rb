@@ -6,9 +6,7 @@ def decode_char(char)
            Y: '-.--', Z: '--..' }
   @result = ''
   code.each do |key, value|
-    if value == char
-      @result = key.to_s
-    end
+    @result = key.to_s if value == char
   end
   @result
 end
