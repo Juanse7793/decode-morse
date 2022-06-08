@@ -9,5 +9,6 @@ def decode_char(char)
     if (value === char)
       @result = key.to_s
     end
-    return @result
+  end
+  return @result
 end
