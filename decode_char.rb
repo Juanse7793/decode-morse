@@ -12,15 +12,22 @@ def decode_char(char)
 end
 
 def decode_word(word)
-  word
-    .split(' ')
-    .select do |char|
-      char != ''
-    end
-    .map do |char|
-      decode_char(char)
-    end
-    .join('')
+  first = word.split.reject do |char|
+    char == ''
+  end
+  first.map do |char|
+    decode_char(char)
+  end
+    .join
 end
 
-puts decode_word("-- -.--")
+def decode(sentence)
+  sentence
+    .split('   ')
+    .map do |word|
+      decode_word(word)
+    end
+    .join(' ')
+end
+
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
